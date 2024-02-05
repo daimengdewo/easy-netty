@@ -1,0 +1,42 @@
+server:
+  port: 8185
+energy:
+  port1: 18185
+  port2: 18186
+  port3: 18187
+spring:
+  #  数据源配置
+  application:
+    name: tcp_energy
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      #  weixian-fs.rwlb.rds.aliyuncs.com:3306
+      #  pc-wz9l0h902c2sgy681.rwlb.rds.aliyuncs.com:3306
+      url: jdbc:mysql://weixian-fs.rwlb.rds.aliyuncs.com:3306/meterserver?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: meterserver
+      password: Wx_123456
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+    jedis:
+      pool:
+        max-wait: 1ms
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: ASSIGN_UUID
+
+logging:
+  level:
+    root: info
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"

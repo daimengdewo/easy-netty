@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "energy.port",
+      "type": "java.lang.String",
+      "description": "Description for energy.port."
+    }
+  ]
+}

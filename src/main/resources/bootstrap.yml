@@ -1,0 +1,23 @@
+spring:
+  application:
+    #服务名称
+    name: tcp_energy
+  profiles:
+    #环境
+    active: dev
+  cloud:
+    nacos:
+      #nacos 服务地址
+      server-addr: localhost:8848
+      config:
+        #文件后缀名
+        file-extension: yaml
+        #命名空间
+        namespace: public
+      discovery:
+        #集群名称
+        cluster-name: FS
+        #命名空间
+        namespace: public
+        #是否临时实例
+        ephemeral: false
